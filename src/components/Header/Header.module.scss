@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cabecalho {
+    padding: 0 2.5rem;
+    height: 5rem;
+    background-color: #0B203E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    .logoTitulo {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .coracao {
+        height: fit-content;
+        width: 3rem;
+    }
+
+    h1{
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 0.875rem;
+        font-weight: 100;
+    }
+
+    nav, ul {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        gap: 4vw;
+    }
+
+    ul {
+        list-style: none;
+        gap: 2.5rem;
+        font-size: 1rem;
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .inicio {
+            padding: 0.4rem 0.9rem;
+            background-color: #316CE1;
+            border-radius: 1rem;
+        }
+    }
+
+    button {
+        padding: 0.5rem;
+        background-color: transparent;
+        border: 2px solid #2E62AD;
+        border-radius: 0.5rem;
+        
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1rem;
+        color: #ffffff;
+
+        &:hover {
+            background-color: #183e72;
+        }
+    }
+}
