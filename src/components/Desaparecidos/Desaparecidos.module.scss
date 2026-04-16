@@ -1,5 +1,4 @@
 .desaparecidos {
-    border: 1px solid red;
     height: 400px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -8,5 +7,13 @@
     .card {
         border: 1px solid blue;
 
+    }
+
+    .aviso {
+        padding: 1rem;
+        width: 100vw;
+        text-align: center;
+        font-size: 1.2rem;
+        color: #7b808fd2;
     }
 }

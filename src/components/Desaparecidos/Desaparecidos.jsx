@@ -1,34 +1,44 @@
-import axios from "axios"
-import { useState, useEffect } from "react"
-import styles from "../Desaparecidos/Desaparecidos.module.scss"
+import axios from "axios";
+import { useState, useEffect } from "react";
+import styles from "../Desaparecidos/Desaparecidos.module.scss";
 
-export default function Desaparecidos() {
-    const [listaDesaparecidos, setListaDesaparecidos] = useState([]);
+export default function Desaparecidos({ busca }) {
+  //lista de desaparecidos
+  const [listaDesaparecidos, setListaDesaparecidos] = useState([]);
 
-    const carregarDados = async () => {
-        const resposta = await axios.get("https://sos-enchentes.onrender.com/desaparecidos");
+  const carregarDados = async () => {
+    const resposta = await axios.get(
+      "https://sos-enchentes.onrender.com/desaparecidos",
+    );
 
-        console.log(resposta.data)
-        setListaDesaparecidos(resposta.data)
-    }
+    setListaDesaparecidos(resposta.data);
+  };
 
-    useEffect(() => {
-        carregarDados();
-    }, []);
+  useEffect(() => {
+    carregarDados();
+  }, []);
 
-    return (
-        <section>
-            <section className={styles.desaparecidos}>
-                {listaDesaparecidos.map((item) => (
-                    <article key={item.id} className={styles.card}>
-                    <h3>{item.nome}</h3>
-                    <p>{item.idade} anos</p>
-                    <p>{item.status}</p>
-                    <p>Descrição: {item.descricao}</p>
-                    <p>Última vez visto: {item.ultima_vezVisto}</p>
-                </article>
-                ))}
-            </section>
-        </section>
-    )
+  const listaFiltrada = listaDesaparecidos.filter((item) =>
+    item.nome.toLowerCase().includes(busca.toLowerCase()),
+  );
+
+  return (
+    <section>
+      <section className={styles.desaparecidos}>
+        {listaFiltrada.length > 0 ? (
+          listaFiltrada.map((item) => (
+            <article key={item.id} className={styles.card}>
+              <h3>{item.nome}</h3>
+              <p>{item.idade} anos</p>
+              <p>{item.status}</p>
+              <p>Descrição: {item.descricao}</p>
+              <p>Última vez visto: {item.ultima_vezVisto}</p>
+            </article>
+          ))
+        ) : (
+          <p className={styles.aviso}>Não encontramos essa pessoa na lista de abrigos</p>
+        )}
+      </section>
+    </section>
+  );
 }

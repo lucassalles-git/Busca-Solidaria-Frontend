@@ -41,9 +41,11 @@ main {
 
     button {
         padding: 0.8rem;
-        background-color: #2F69DC;
         border: none;
         border-radius: 0.6rem;
+        background-color: #2F69DC;
+        cursor: pointer;
+
         font-size: 1em;
         color: #fff;
     }
