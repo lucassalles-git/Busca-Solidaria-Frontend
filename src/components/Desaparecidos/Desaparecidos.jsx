@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "../Desaparecidos/Desaparecidos.module.scss";
-import Perfil from "../../assets/perfil.png"
+import Perfil from "../../assets/perfil.png";
 
 export default function Desaparecidos({ busca }) {
   //lista de desaparecidos
@@ -30,7 +30,13 @@ export default function Desaparecidos({ busca }) {
           listaFiltrada.map((item) => (
             <article key={item.id} className={styles.card}>
               <div className={styles.containerPerfil}>
-                <img src={item.imagem} alt="Imagem de perfil" />
+                <img
+                  src={item.imagem || Perfil}
+                  alt="Imagem de perfil"
+                  onError={(e) => {
+                    e.target.src = Perfil;
+                  }}
+                />
                 <div>
                   <h3>{item.nome}</h3>
                   <p className={styles.idade}>Idade: {item.idade} anos</p>
@@ -38,11 +44,11 @@ export default function Desaparecidos({ busca }) {
                 </div>
               </div>
               {item.status?.toLowerCase() === "encontrado" && (
-                    <>
-                    <p>Abrigo: {item.abrigo}</p>
-                    <p>Endereço: {item.endereco}</p>
-                    </>
-                  )}
+                <>
+                  <p>Abrigo: {item.abrigo}</p>
+                  <p>Endereço: {item.endereco}</p>
+                </>
+              )}
               <p>Descrição: {item.descricao}</p>
 
               {item.status?.toLowerCase() !== "encontrado" && (
@@ -51,7 +57,9 @@ export default function Desaparecidos({ busca }) {
             </article>
           ))
         ) : (
-          <p className={styles.aviso}>Não encontramos essa pessoa na lista de abrigos</p>
+          <p className={styles.aviso}>
+            Não encontramos essa pessoa na lista de abrigos
+          </p>
         )}
       </section>
     </section>

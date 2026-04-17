@@ -5,6 +5,7 @@ import Apoio from "../../assets/terapia.png";
 import Styles from "../Cadastro/Cadastro.module.scss";
 
 export default function Cadastro() {
+  const [imagem, setImagem] = useState("");
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
   const [descricao, setDescricao] = useState("");
@@ -14,6 +15,7 @@ export default function Cadastro() {
     e.preventDefault();
 
     const novoDesaparecido = {
+      imagem: imagem || null,
       nome,
       idade,
       descricao,
@@ -41,6 +43,12 @@ export default function Cadastro() {
             <img src={Apoio} alt="Mão e um coração acima" />
           </div>
           <form onSubmit={enviarDesaparecidos}>
+            <input
+              type="text"
+              placeholder="Link da imagem (opcional)"
+              value={imagem}
+              onChange={(e) => setImagem(e.target.value)}
+            />
             <input
               type="text"
               className="campo-nome"
