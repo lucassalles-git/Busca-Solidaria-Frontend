@@ -43,17 +43,18 @@ export default function Desaparecidos({ busca }) {
                   <p>{item.status}</p>
                 </div>
               </div>
-              {item.status?.toLowerCase() === "encontrado" && (
-                <>
-                  <p>Abrigo: {item.abrigo}</p>
-                  <p>Endereço: {item.endereco}</p>
-                </>
-              )}
-              <p>Descrição: {item.descricao}</p>
-
-              {item.status?.toLowerCase() !== "encontrado" && (
-                <p>Última vez visto: {item.ultima_vezVisto}</p>
-              )}
+              <div className={styles.descricoes}>
+                {item.status?.toLowerCase() === "encontrado" && (
+                  <>
+                    <p><span>Abrigo:</span> {item.abrigo}</p>
+                    <p><span>Endereço:</span> {item.endereco}</p>
+                  </>
+                )}
+                <p><span>Descrição:</span> {item.descricao}</p>
+                {item.status?.toLowerCase() !== "encontrado" && (
+                  <p><span>Última vez visto:</span> {item.ultima_vezVisto}</p>
+                )}
+              </div>
             </article>
           ))
         ) : (
