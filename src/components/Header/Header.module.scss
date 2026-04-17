@@ -1,78 +1,81 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 500;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+  font-weight: 500;
 }
 
 .cabecalho {
-    padding: 0 2.5rem;
-    height: 5rem;
-    background-color: #0B203E;
+  padding: 0 2.5rem;
+  height: 5rem;
+  background-color: #0b203e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #ffffff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+  .logoTitulo {
     display: flex;
-    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .coracao {
+    height: fit-content;
+    width: 3rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 0.875rem;
+  }
+
+  nav,
+  ul {
+    display: flex;
     align-items: center;
+  }
 
+  nav {
+    gap: 4vw;
+  }
+
+  ul {
+    list-style: none;
+    gap: 2.5rem;
+    font-size: 1rem;
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .inicio {
+      padding: 0.4rem 0.9rem;
+      background-color: #316ce1;
+      border-radius: 1rem;
+    }
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 2px solid #2e62ad;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    font-size: 1rem;
     color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-    .logoTitulo {
-        display: flex;
-        gap: 2rem;
+    &:hover {
+      background-color: #183e72;
     }
-
-    .coracao {
-        height: fit-content;
-        width: 3rem;
-    }
-
-    h1{
-        font-size: 1.75rem;
-    }
-
-    h2 {
-        font-size: 0.875rem;
-    }
-
-    nav, ul {
-        display: flex;
-        align-items: center;
-    }
-
-    nav {
-        gap: 4vw;
-    }
-
-    ul {
-        list-style: none;
-        gap: 2.5rem;
-        font-size: 1rem;
-
-        a {
-            text-decoration: none;
-            color: #ffffff;
-        }
-
-        .inicio {
-            padding: 0.4rem 0.9rem;
-            background-color: #316CE1;
-            border-radius: 1rem;
-        }
-    }
-
-    button {
-        padding: 0.5rem;
-        background-color: transparent;
-        border: 2px solid #2E62AD;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        
-        font-size: 1rem;
-        color: #ffffff;
-
-        &:hover {
-            background-color: #183e72;
-        }
-    }
+  }
 }

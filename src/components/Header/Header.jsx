@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 import styles from "../Header/Header.module.scss";
 import coracao from "../../assets/coracao.png";
@@ -23,7 +23,9 @@ export default function Header() {
           <li>Lista</li>
           <li>Como funciona</li>
         </ul>
-          <Link to="/cadastro"><button>Cadastrar</button></Link>
+        <Link to="/cadastro">
+          <button>Cadastrar</button>
+        </Link>
       </nav>
     </header>
   );
