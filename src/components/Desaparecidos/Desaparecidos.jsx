@@ -30,7 +30,7 @@ export default function Desaparecidos({ busca }) {
           listaFiltrada.map((item) => (
             <article key={item.id} className={styles.card}>
               <div className={styles.containerPerfil}>
-                <img src={Perfil} alt="Imagem de perfil" />
+                <img src={item.imagem} alt="Imagem de perfil" />
                 <div>
                   <h3>{item.nome}</h3>
                   <p className={styles.idade}>Idade: {item.idade} anos</p>
