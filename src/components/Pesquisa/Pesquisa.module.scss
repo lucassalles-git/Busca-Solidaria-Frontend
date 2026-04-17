@@ -19,6 +19,10 @@
 
         font-size: 1.3rem;
 
+        &:focus {
+            outline: none;
+        }
+        
         &::placeholder {
             color: #7b808f;
             opacity: 1;

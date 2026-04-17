@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "../Desaparecidos/Desaparecidos.module.scss";
+import Perfil from "../../assets/perfil.png"
 
 export default function Desaparecidos({ busca }) {
   //lista de desaparecidos
@@ -28,11 +29,25 @@ export default function Desaparecidos({ busca }) {
         {listaFiltrada.length > 0 ? (
           listaFiltrada.map((item) => (
             <article key={item.id} className={styles.card}>
-              <h3>{item.nome}</h3>
-              <p>{item.idade} anos</p>
-              <p>{item.status}</p>
+              <div className={styles.containerPerfil}>
+                <img src={Perfil} alt="Imagem de perfil" />
+                <div>
+                  <h3>{item.nome}</h3>
+                  <p className={styles.idade}>Idade: {item.idade} anos</p>
+                  <p>{item.status}</p>
+                </div>
+              </div>
+              {item.status?.toLowerCase() === "encontrado" && (
+                    <>
+                    <p>Abrigo: {item.abrigo}</p>
+                    <p>Endereço: {item.endereco}</p>
+                    </>
+                  )}
               <p>Descrição: {item.descricao}</p>
-              <p>Última vez visto: {item.ultima_vezVisto}</p>
+
+              {item.status?.toLowerCase() !== "encontrado" && (
+                <p>Última vez visto: {item.ultima_vezVisto}</p>
+              )}
             </article>
           ))
         ) : (

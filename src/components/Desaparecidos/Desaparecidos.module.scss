@@ -1,19 +1,45 @@
 .desaparecidos {
-    height: 400px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
 
-    .card {
-        border: 1px solid blue;
+.card {
+  width: 20rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 2rem #e1e5ee;
 
-    }
+  div {
+    border: 1px solid red;
+  }
 
-    .aviso {
-        padding: 1rem;
-        width: 100vw;
-        text-align: center;
-        font-size: 1.2rem;
-        color: #7b808fd2;
-    }
+  .containerPerfil {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .idade {
+    margin: 0.3rem 0;
+  }
+
+  img {
+    width: 30%;
+    border: 1px solid blue;
+    border-radius: 0.7rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+}
+
+.aviso {
+  padding: 1rem;
+  width: 100vw;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #7b808fd2;
 }
