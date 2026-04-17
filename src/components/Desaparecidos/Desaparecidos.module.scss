@@ -4,6 +4,7 @@
   grid-template-columns: repeat(3, 300px);
   align-items: center;
   justify-content: center;
+  
   gap: 1.5rem;
 }
 
@@ -43,9 +44,10 @@
 }
 
 .aviso {
+  border: 1px solid red;
   padding: 1rem;
-  width: 100vw;
-  text-align: center;
+  grid-column: 2;
+
   font-size: 1.2rem;
   color: #7b808fd2;
 }
