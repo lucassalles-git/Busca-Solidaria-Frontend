@@ -44,9 +44,9 @@
 }
 
 .aviso {
-  border: 1px solid red;
+  width: max-content;
   padding: 1rem;
-  grid-column: 2;
+  grid-column: 2/11;
 
   font-size: 1.2rem;
   color: #7b808fd2;
