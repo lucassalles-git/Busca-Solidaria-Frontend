@@ -1,4 +1,5 @@
 import styles from "../Pesquisa/Pesquisa.module.scss";
+import Lupa from "../../assets/image/lupa.png"
 
 //setBusca irá atualizar o valor da lista (inicio)
 export default function Pesquisa({ busca, setBusca }) {
@@ -8,13 +9,16 @@ export default function Pesquisa({ busca, setBusca }) {
   return (
     <section className={styles.containerPesquisa}>
       <form onSubmit={buscarPessoa}>
-        <input
-          type="text"
-          placeholder="Digite o nome da pessoa..."
-          value={busca}
-          onChange={(e) => setBusca(e.target.value)}
-        />
-        <button type="submit">Buscar</button>
+        <img src={Lupa} alt="Imagem de uma Lupa" />
+        <div>
+          <input
+            type="text"
+            placeholder="Digite o nome da pessoa..."
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
+          />
+          <button type="submit">Buscar</button>
+        </div>
       </form>
     </section>
   );

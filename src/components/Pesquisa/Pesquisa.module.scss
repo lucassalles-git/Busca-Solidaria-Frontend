@@ -8,6 +8,14 @@
     padding: 1rem;
     box-shadow: 0 7px 10px #e5e9f0;
     border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    img {
+      width: 3rem;
+    }
   }
 
   input {
