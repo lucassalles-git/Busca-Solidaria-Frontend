@@ -32,61 +32,59 @@ export default function Cadastro() {
   return (
     <>
       <Header />
-
-      <main>
-        <section className={Styles.sectionTitulo}>
-          <div className={Styles.containerTitulo}>
-            <div>
-              <h2>Não encontrou?</h2>
-              <p>Cadastre uma pessoa desaparecida</p>
+        <main>
+          <section className={Styles.sectionTitulo}>
+            <div className={Styles.containerTitulo}>
+              <div>
+                <h2>Não encontrou?</h2>
+                <p>Cadastre uma pessoa desaparecida</p>
+              </div>
+              <img src={Apoio} alt="Mão e um coração acima" />
             </div>
-            <img src={Apoio} alt="Mão e um coração acima" />
-          </div>
-          <form onSubmit={enviarDesaparecidos}>
-            <input
-              type="text"
-              placeholder="Link da imagem (opcional)"
-              value={imagem}
-              onChange={(e) => setImagem(e.target.value)}
-            />
-            <input
-              type="text"
-              className="campo-nome"
-              placeholder="Nome completo"
-              required
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
-            <input
-              type="number"
-              className="campo-idade"
-              placeholder="Idade"
-              required
-              value={idade}
-              onChange={(e) => setIdade(e.target.value)}
-            />
-            <input
-              type="text"
-              className="campo-descricao"
-              placeholder="Descrição (opcional)"
-              value={descricao}
-              onChange={(e) => setDescricao(e.target.value)}
-            />
-            <input
-              type="text"
-              className="campo-localVisto"
-              placeholder="Última vez visto"
-              required
-              value={ultima_vezVisto}
-              onChange={(e) => setUltimoLocal(e.target.value)}
-            />
-
-            <button type="submit" className="botão-enviar">
-              + Cadastrar Desaparecido
-            </button>
-          </form>
-        </section>
-      </main>
+            <form onSubmit={enviarDesaparecidos}>
+              <input
+                type="text"
+                placeholder="Link da imagem (opcional)"
+                value={imagem}
+                onChange={(e) => setImagem(e.target.value)}
+              />
+              <input
+                type="text"
+                className="campo-nome"
+                placeholder="Nome completo"
+                required
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+              <input
+                type="number"
+                className="campo-idade"
+                placeholder="Idade"
+                required
+                value={idade}
+                onChange={(e) => setIdade(e.target.value)}
+              />
+              <input
+                type="text"
+                className="campo-descricao"
+                placeholder="Descrição (opcional)"
+                value={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
+              />
+              <input
+                type="text"
+                className="campo-localVisto"
+                placeholder="Última vez visto"
+                required
+                value={ultima_vezVisto}
+                onChange={(e) => setUltimoLocal(e.target.value)}
+              />
+              <button type="submit" className="botão-enviar">
+                + Cadastrar Desaparecido
+              </button>
+            </form>
+          </section>
+        </main>
     </>
   );
 }

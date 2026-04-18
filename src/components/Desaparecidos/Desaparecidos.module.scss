@@ -1,8 +1,6 @@
 .desaparecidos {
-  border: 1px solid red;
   display: grid;
   grid-template-columns: repeat(3, 300px);
-  align-items: center;
   justify-content: center;
 
   gap: 1.5rem;
@@ -13,6 +11,7 @@
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 2rem #e1e5ee;
+
 
   .containerPerfil {
     display: flex;
@@ -85,9 +84,7 @@
 }
 
 .aviso {
-  width: max-content;
-  padding: 1rem;
-  grid-column: 2/11;
+  grid-column: 2/10;
 
   font-size: 1.2rem;
   color: #7b808fd2;

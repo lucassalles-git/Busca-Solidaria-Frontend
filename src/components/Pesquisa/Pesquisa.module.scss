@@ -9,8 +9,8 @@
     box-shadow: 0 7px 10px #e5e9f0;
     border-radius: 1rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
     gap: 1.6rem;
 
     img {
