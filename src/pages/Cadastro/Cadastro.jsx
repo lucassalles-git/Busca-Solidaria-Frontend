@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Header from "../../components/Header/Header";
-import Apoio from "../../assets/terapia.png";
+import Apoio from "../../assets/image/terapia.png";
 import Styles from "../Cadastro/Cadastro.module.scss";
 
 export default function Cadastro() {

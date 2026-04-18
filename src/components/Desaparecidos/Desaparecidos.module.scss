@@ -35,11 +35,48 @@
     font-size: 1.4rem;
   }
 
+  p {
+    color: rgba(0, 0, 0, 0.849);
+  }
+
+  .encontrado, .desaparecido {
+    padding: 4px 10px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-weight: 600;
+
+    img {
+      width: 1.3rem;
+    }
+  }
+
+  .encontrado {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .desaparecido {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
   .descricoes {
-    padding: 0.7rem;
+    padding: 2rem 0.7rem 0.7rem 0.7rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    div {
+      display: flex;
+      gap: 0.5rem;
+
+      img {
+        width: 1.2rem;
+      }
+    }
   }
 
   span {

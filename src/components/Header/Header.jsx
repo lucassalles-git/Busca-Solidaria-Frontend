@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import styles from "../Header/Header.module.scss";
-import coracao from "../../assets/coracao.png";
+import coracao from "../../assets/image/coracao.png";
 
 export default function Header() {
   return (
