@@ -1,9 +1,3 @@
-main {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   .sectionTitulo {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.123);
@@ -40,14 +34,14 @@ main {
     gap: 0.5rem;
 
     button {
-        padding: 0.8rem;
-        border: none;
-        border-radius: 0.6rem;
-        background-color: #2F69DC;
-        cursor: pointer;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 0.6rem;
+      background-color: #2f69dc;
+      cursor: pointer;
 
-        font-size: 1em;
-        color: #fff;
+      font-size: 1em;
+      color: #fff;
     }
   }
 
@@ -58,4 +52,3 @@ main {
 
     font-size: 1em;
   }
-}

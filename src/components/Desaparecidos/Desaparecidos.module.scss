@@ -1,4 +1,7 @@
+
+
 .desaparecidos {
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 300px);
   justify-content: center;
@@ -7,7 +10,6 @@
 }
 
 .card {
-  height: 100%;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 2rem #e1e5ee;
