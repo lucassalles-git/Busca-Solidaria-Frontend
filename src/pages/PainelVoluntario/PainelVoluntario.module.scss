@@ -1,0 +1,67 @@
+.container {
+  background-color: #ebebf5;
+}
+
+.containerTitulo {
+  padding: 24px 40px;
+  background-color: #e4e3f2;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 1.1rem;
+  color: #16213e;
+
+  button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.6rem;
+    background-color: #2f69dc;
+    cursor: pointer;
+
+    font-size: 0.8em;
+    color: #fff;
+  }
+}
+
+.containerInput {
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.barraPesquisa,
+.pessoasCadastradas {
+  width: 23rem;
+  padding: 0.6rem 1.6rem;
+}
+
+.barraPesquisa {
+    padding-left: 2.3rem;
+}
+
+.pesquisa {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  img {
+    width: 1.6rem;
+    position: absolute;
+    left: 0.6rem;
+  }
+}
+
+.pessoasCadastradas {
+  background-color: #dbe2f6;
+  border-radius: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    width: 1.9rem;
+  }
+}
