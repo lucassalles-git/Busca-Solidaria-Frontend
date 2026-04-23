@@ -13,7 +13,7 @@ import Sim from "../../assets/image/sim.png";
 import Atencao from "../../assets/image/atencao.png";
 import Endereco from "../../assets/image/endereco-residencial.png";
 import Pin from "../../assets/image/pin.png";
-import Pessoa from "../../assets/image/pessoa.png"
+import Pessoa from "../../assets/image/pessoa.png";
 
 export default function PainelVoluntario() {
   //Chamando a lista
@@ -31,34 +31,40 @@ export default function PainelVoluntario() {
     carregarDados();
   }, []);
 
-  //Cadastrar novo desaparecido
-  const [imagem, setImagem] = useState("");
-  const [nome, setNome] = useState("");
-  const [idade, setIdade] = useState("");
-  const [status, setStatus] = useState("Desaparecido");
-  const [descricao, setDescricao] = useState("");
-  const [ultima_vezVisto, setUltimaVezVista] = useState("");
-  const [abrigo, setAbrigo] = useState("");
-  const [endereco, setEndereco] = useState("");
+  //state para edição
+  const [editandoId, setEditandoId] = useState(null);
+  const [artic, setArtic] = useState({
+    status: "",
+    abrigo: "",
+    endereco: "",
+  });
 
-  const enviarDados = async (e) => {
-    e.preventDefault();
+  //Função para iniciar edição
+  const editar = (item) => {
+    setEditandoId(item.id);
 
-    const novoDesaparecido = {
-      nome,
-      idade,
-      status,
-      descricao,
-      ultima_vezVisto,
-      abrigo,
-      endereco,
-    };
+    setArtic({
+      status: item.status,
+      abrigo: item.abrigo,
+      endereco: item.endereco,
+    });
+  };
 
-    await axios.post(
-      "https://sos-enchentes.onrender.com/desaparecidos",
-      novoDesaparecido,
+  //Função salvar (PUT)
+  const salvarEdicao = async () => {
+    await axios.put(
+      `https://sos-enchentes.onrender.com/desaparecidos/${editandoId}`,
+      artic,
     );
-    alert("Cadastro realizado com sucesso!");
+
+    setEditandoId(null);
+    carregarDados();
+  };
+
+  //Cancelar edição
+
+  const cancelarEdicao = () => {
+    setEditandoId(null);
   };
 
   return (
@@ -91,78 +97,128 @@ export default function PainelVoluntario() {
         <section className={styles.containerLista}>
           {listaDesaparecidos.map((item) => (
             <article key={item.id} className={styles.cards}>
-              <div className={styles.containerPerfil}>
-                <img src={item.imagem} alt="" />
-
-                <div>
-                  <h3>{item.nome}</h3>
-                  <p className={styles.idade}>Idade: {item.idade} anos</p>
-
-                  <div
-                    className={
-                      item.status?.toLowerCase() === "encontrado"
-                        ? styles.encontrado
-                        : styles.desaparecido
-                    }
-                  >
-                    <img
-                      src={
-                        item.status?.toLowerCase() === "encontrado"
-                          ? Sim
-                          : Atencao
+              {editandoId === item.id ? (
+                <>
+                  <div className={styles.containerEdite}>
+                    <select
+                      value={artic.status}
+                      onChange={(e) =>
+                        setArtic({ ...artic, status: e.target.value })
                       }
-                      alt="Imagem check"
-                    />
+                    >
+                      <option value="desaparecido">Desaparecido</option>
+                      <option value="encontrado">Encontrado</option>
+                    </select>
 
-                    <p>{item.status}</p>
+                    <div className={styles.inp}>
+                      <label>Abrigo:</label>
+                      <input
+                        value={artic.abrigo}
+                        onChange={(e) =>
+                          setArtic({ ...artic, abrigo: e.target.value })
+                        }
+                      />
+                    </div>
+
+                    <div className={styles.inp}>
+                      <label>Endereço:</label>
+                      <input
+                        value={artic.endereco}
+                        onChange={(e) =>
+                          setArtic({ ...artic, endereco: e.target.value })
+                        }
+                      />
+                    </div>
+
+                    <div className={styles.buttons}>
+                      <button onClick={salvarEdicao}>Salvar</button>
+                      <button onClick={cancelarEdicao}>Cancelar</button>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <div className={styles.descricoes}>
-                {item.status?.toLowerCase() === "encontrado" && (
-                  <>
-                    <div>
-                      <img src={Endereco} alt="Imagem de casa" />
-                      <p>
-                        <span>Abrigo:</span> {item.abrigo}
-                      </p>
-                    </div>
+                </>
+              ) : (
+                <>
+                  <div className={styles.containerPerfil}>
+                    <img src={item.imagem} alt="" />
 
                     <div>
-                      <img src={Pin} alt="Imagem de Localização" />
-                      <p>
-                        <span>Endereço:</span> {item.endereco}
-                      </p>
-                    </div>
+                      <h3>{item.nome}</h3>
+                      <p className={styles.idade}>Idade: {item.idade} anos</p>
 
-                    <div>
-                      <img src={Pessoa} alt="Imagem de Perfil" />
-                      <p>
-                        <span>Descrição:</span> {item.descricao}
-                      </p>
-                    </div>
-                  </>
-                )}
+                      <div
+                        className={
+                          item.status?.toLowerCase() === "encontrado"
+                            ? styles.encontrado
+                            : styles.desaparecido
+                        }
+                      >
+                        <img
+                          src={
+                            item.status?.toLowerCase() === "encontrado"
+                              ? Sim
+                              : Atencao
+                          }
+                          alt="Imagem check"
+                        />
 
-                {item.status?.toLowerCase() !== "encontrado" && (
-                  <>
-                    <div>
-                      <img src={Pessoa} alt="Imagem de Perfil" />
-                      <p>
-                        <span>Descrição:</span> {item.descricao}
-                      </p>
+                        <p>{item.status}</p>
+                      </div>
                     </div>
+                  </div>
 
-                    <div>
-                      <img src={Pessoa} alt="Imagem de Perfil" />
-                      <p>
-                        <span>Última vez visto:</span> {item.ultima_vezVisto}
-                      </p>
-                    </div>
-                  </>
-                )}
-              </div>
+                  <div className={styles.descricoes}>
+                    {item.status?.toLowerCase() === "encontrado" && (
+                      <>
+                        <div>
+                          <img src={Endereco} alt="Imagem de casa" />
+                          <p>
+                            <span>Abrigo:</span> {item.abrigo}
+                          </p>
+                        </div>
+
+                        <div>
+                          <img src={Pin} alt="Imagem de Localização" />
+                          <p>
+                            <span>Endereço:</span> {item.endereco}
+                          </p>
+                        </div>
+
+                        <div>
+                          <img src={Pessoa} alt="Imagem de Perfil" />
+                          <p>
+                            <span>Descrição:</span> {item.descricao}
+                          </p>
+                        </div>
+                      </>
+                    )}
+
+                    {item.status?.toLowerCase() !== "encontrado" && (
+                      <>
+                        <div>
+                          <img src={Pessoa} alt="Imagem de Perfil" />
+                          <p>
+                            <span>Descrição:</span> {item.descricao}
+                          </p>
+                        </div>
+
+                        <div>
+                          <img src={Pessoa} alt="Imagem de Perfil" />
+                          <p>
+                            <span>Última vez visto:</span>{" "}
+                            {item.ultima_vezVisto}
+                          </p>
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  <div className={styles.btns}>
+                    <button onClick={() => editar(item)}>Editar</button>
+
+                    <button className={styles.excluir}>Excluir</button>
+                  </div>
+                </>
+              )}
             </article>
           ))}
         </section>

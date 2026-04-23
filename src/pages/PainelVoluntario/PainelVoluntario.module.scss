@@ -79,6 +79,8 @@
   gap: 1rem;
 }
 
+// Cards
+
 .cards {
   padding: 1rem;
   border-radius: 1rem;
@@ -153,5 +155,61 @@
 
   span {
     font-weight: 600;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.6rem;
+    background-color: #2f69dc;
+    cursor: pointer;
+
+    font-size: 0.8em;
+    color: #fff;
+  }
+
+  .excluir {
+    background-color: #cc473c;
+  }
+
+  //Edite 
+  .containerEdite {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    select {
+      border: 1px solid #B8BECB;
+      border-radius: 0.4rem;
+
+      padding: 0.3rem;
+      background-color: #EAEBF5;
+      font-size: 0.9rem;
+      
+    }
+
+    input {
+      width: 100%;
+      background-color: #EAEBF5;
+    }
+
+    .inp {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
   }
 }
