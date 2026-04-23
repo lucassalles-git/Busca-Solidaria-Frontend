@@ -2,6 +2,8 @@
   background-color: #ebebf5;
 }
 
+//Seção de botão para cadastro
+
 .containerTitulo {
   padding: 24px 40px;
   background-color: #e4e3f2;
@@ -24,6 +26,8 @@
   }
 }
 
+//Seção Barra de pesquisa
+
 .containerInput {
   padding: 24px 40px;
   display: flex;
@@ -38,7 +42,7 @@
 }
 
 .barraPesquisa {
-    padding-left: 2.3rem;
+  padding-left: 2.3rem;
 }
 
 .pesquisa {
@@ -63,5 +67,91 @@
 
   img {
     width: 1.9rem;
+  }
+}
+
+// Seção Lista de pessoas
+
+.containerLista {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.cards {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 2rem #e1e5ee;
+  background-color: #fff;
+
+  .containerPerfil {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .idade {
+    margin: 0.5rem 0.5rem 1.5rem 0;
+  }
+
+  img {
+    height: 100%;
+    width: 40%;
+    border-radius: 0.7rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.849);
+  }
+
+  .encontrado,
+  .desaparecido {
+    padding: 4px 10px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-weight: 600;
+
+    img {
+      width: 1.3rem;
+    }
+  }
+
+  .encontrado {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .desaparecido {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .descricoes {
+    padding: 2rem 0.7rem 0.7rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    div {
+      display: flex;
+      gap: 0.5rem;
+
+      img {
+        width: 1.2rem;
+      }
+    }
+  }
+
+  span {
+    font-weight: 600;
   }
 }

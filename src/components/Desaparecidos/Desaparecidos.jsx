@@ -51,7 +51,7 @@ export default function Desaparecidos({ busca }) {
                       item.status?.toLowerCase() === "encontrado"
                         ? styles.encontrado
                         : styles.desaparecido
-                    }
+                      }
                   >
                     <img
                       src={
@@ -80,21 +80,31 @@ export default function Desaparecidos({ busca }) {
                         <span>Endereço:</span> {item.endereco}
                       </p>
                     </div>
+
+                    <div>
+                      <img src={Pessoa} alt="Imagem de Perfil" />
+                      <p>
+                        <span>Descrição:</span> {item.descricao}
+                      </p>
+                    </div>
                   </>
                 )}
-                <div>
-                  <img src={Pessoa} alt="Imagem de Perfil" />
-                  <p>
-                    <span>Descrição:</span> {item.descricao}
-                  </p>
-                </div>
                 {item.status?.toLowerCase() !== "encontrado" && (
-                  <div>
-                    <img src={Pessoa} alt="Imagem de Perfil" />
-                    <p>
-                      <span>Última vez visto:</span> {item.ultima_vezVisto}
-                    </p>
-                  </div>
+                  <>
+                    <div>
+                      <img src={Pessoa} alt="Imagem de Perfil" />
+                      <p>
+                        <span>Descrição:</span> {item.descricao}
+                      </p>
+                    </div>
+
+                    <div>
+                      <img src={Pessoa} alt="Imagem de Perfil" />
+                      <p>
+                        <span>Última vez visto:</span> {item.ultima_vezVisto}
+                      </p>
+                    </div>
+                  </>
                 )}
               </div>
             </article>
