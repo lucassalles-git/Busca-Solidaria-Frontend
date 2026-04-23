@@ -3,8 +3,6 @@ import axios from "axios";
 import styles from "../PainelVoluntario/PainelVoluntario.module.scss";
 
 import Header from "../../components/Header/Header";
-import Desaparecidos from "../../components/Desaparecidos/Desaparecidos";
-import Footer from "../../components/Footer/Footer";
 
 import Pessoas from "../../assets/image/pessoas.png";
 import Lupa2 from "../../assets/image/lupa2.png";
