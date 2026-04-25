@@ -51,7 +51,7 @@ export default function Desaparecidos({ busca }) {
                       item.status?.toLowerCase() === "encontrado"
                         ? styles.encontrado
                         : styles.desaparecido
-                      }
+                    }
                   >
                     <img
                       src={

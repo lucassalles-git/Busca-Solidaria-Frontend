@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/painelVoluntario" element={<PainelVoluntario />} />
+        <Route path="/painelVoluntario" element={<PainelVoluntario/>} />
       </Routes>
     </BrowserRouter>
   );

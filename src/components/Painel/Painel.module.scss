@@ -26,56 +26,14 @@
   }
 }
 
-//Seção Barra de pesquisa
-
-.containerInput {
-  padding: 24px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.barraPesquisa,
-.pessoasCadastradas {
-  width: 23rem;
-  padding: 0.6rem 1.6rem;
-}
-
-.barraPesquisa {
-  padding-left: 2.3rem;
-}
-
-.pesquisa {
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  img {
-    width: 1.6rem;
-    position: absolute;
-    left: 0.6rem;
-  }
-}
-
-.pessoasCadastradas {
-  background-color: #dbe2f6;
-  border-radius: 0.8rem;
-
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  img {
-    width: 1.9rem;
-  }
-}
-
 // Seção Lista de pessoas
 
 .containerLista {
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 25rem));
+  justify-content: center;
+  
   gap: 1rem;
 }
 
@@ -97,9 +55,9 @@
     margin: 0.5rem 0.5rem 1.5rem 0;
   }
 
-  img {
-    height: 100%;
-    width: 40%;
+  .perfil {
+    height: fit-content;
+    width: 8rem;
     border-radius: 0.7rem;
   }
 
@@ -148,6 +106,7 @@
       gap: 0.5rem;
 
       img {
+        height: fit-content;
         width: 1.2rem;
       }
     }
@@ -213,3 +172,8 @@
     }
   }
 }
+
+.aviso {
+    grid-column: 1/21;
+    text-align: center;
+  }
