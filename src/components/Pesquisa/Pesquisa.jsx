@@ -17,7 +17,6 @@ export default function Pesquisa({ busca, setBusca }) {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
           />
-          <button type="submit">Buscar</button>
         </div>
       </form>
     </section>

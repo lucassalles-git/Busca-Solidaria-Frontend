@@ -22,7 +22,7 @@
     width: 30rem;
     padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.288);
-    border-radius: 0.7rem 0 0 0.7rem;
+    border-radius: 0.7rem;
 
     font-size: 1.3rem;
 
@@ -34,15 +34,5 @@
       color: #7b808f;
       opacity: 1;
     }
-  }
-
-  button {
-    padding: 1rem 1.9rem;
-    background-color: #2f69dc;
-    border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 0 0.7rem 0.7rem 0;
-
-    font-size: 1.3rem;
-    color: #fff;
   }
 }

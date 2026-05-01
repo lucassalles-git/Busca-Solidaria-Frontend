@@ -36,7 +36,7 @@ export default function Desaparecidos({ busca }) {
           listaFiltrada.map((item) => (
             <article key={item.id} className={styles.card}>
               <div className={styles.containerPerfil}>
-                <img
+                <img className={styles.perfil}
                   src={item.imagem || Perfil}
                   alt="Imagem de perfil"
                   onError={(e) => {
